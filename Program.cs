@@ -125,13 +125,13 @@ void PickTeam()
     Random r = new Random();
     int genRand= r.Next(-10,10);
     int luckValue = genRand;
-    bankDifficulty += luckValue;
+    int newbankDifficulty = bankDifficulty + luckValue;
     int TeamSkill = myTeam.TeamMembers.Sum(n => n.Skill);
     Console.WriteLine();
-    Console.WriteLine($"Your Team's Combined Skill is {TeamSkill}. And you're attempting to rob a bank with a difficulty score of {bankDifficulty}");
+    Console.WriteLine($"Your Team's Combined Skill is {TeamSkill}. And you're attempting to rob a bank with a difficulty score of {newbankDifficulty}");
 
-    if (TeamSkill < bankDifficulty) {
-        Trials result = new Trials(TeamSkill, bankDifficulty, false);
+    if (TeamSkill < newbankDifficulty) {
+        Trials result = new Trials(TeamSkill, newbankDifficulty, false);
         scoreBook.GameTrials.Add(result);
         Console.WriteLine();
         Console.WriteLine("YOU GOT BUSTED MOTHER FUCKERRRRRRRSSSS TRY AGAINNN WITH BETTER PEOPLEEEEEEEEE");
@@ -139,7 +139,7 @@ void PickTeam()
     }
     else
     {
-        Trials result = new Trials(TeamSkill, bankDifficulty, true);
+        Trials result = new Trials(TeamSkill, newbankDifficulty, true);
         scoreBook.GameTrials.Add(result);
         Console.WriteLine();
         Console.WriteLine("YOINKS THIS TEAM CAN REALLY DO IT DO IT THEY JUST ROBBED THE JOINT FOR A BAZZILLION GEORGIES OH MY GOD");
