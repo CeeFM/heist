@@ -44,21 +44,40 @@ void PickTeam()
     Console.WriteLine();
     Console.WriteLine(@$"So here's what we've got...{myTeam.Name} has {myTeam.TeamMembers.Count} members, as follows:");
     Console.WriteLine();
-    for (int k = 0; k < myTeam.TeamMembers.Count; k++ )
-    {
-        Console.WriteLine(@$"
-
-        ****NAME*****: {myTeam.TeamMembers[k].Name}
-
-        ****SKILL LEVEL*****: {myTeam.TeamMembers[k].Skill}
-
-        ****COURAGE LEVEL*****: {myTeam.TeamMembers[k].Courage}
-
-        ****OVERALL OUTLOOK*****: MEH KINDA HARD TO SAY TBH I WOULDN'T BET ON IT THO
-        
-        ");
+    int bankDifficulty = 100;
+    int TeamSkill = myTeam.TeamMembers.Sum(n => n.Skill);
+    Console.WriteLine(TeamSkill);
+    if (TeamSkill < bankDifficulty) {
+        Console.WriteLine("YOU GOT BUSTED MOTHER FUCKERRRRRRR TRY AGAINNN WITH BETTER PEOPLEEEEEEEEE");
     }
+    else
+    {
+        Console.WriteLine("YOINKS THIS TEAM CAN REALLY DO IT DO IT THEY JUST ROBBED THE JOINT FOR A BAZZILLION GEORGIES OH MY GOD");
+    }
+//  UNAPOLOGETICALLY stashing a for loop here in case i want it and am too lazy to type it out
+    // for (int k = 0; k < myTeam.TeamMembers.Count; k++ )
+    // {
+        
+    // }
 }
 
 }
 }
+
+
+// old loop for displaying each team member's info, felt like useful copypasta to stick on the wall
+
+    // for (int k = 0; k < myTeam.TeamMembers.Count; k++ )
+    // {
+    //     Console.WriteLine(@$"
+
+    //     ****NAME*****: {myTeam.TeamMembers[k].Name}
+
+    //     ****SKILL LEVEL*****: {myTeam.TeamMembers[k].Skill}
+
+    //     ****COURAGE LEVEL*****: {myTeam.TeamMembers[k].Courage}
+
+    //     ****OVERALL OUTLOOK*****: MEH KINDA HARD TO SAY TBH I WOULDN'T BET ON IT THO
+        
+    //     ");
+    // }
