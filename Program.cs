@@ -24,7 +24,7 @@ void Main()
     bankDifficulty = 100;
     }
     Console.WriteLine();
-    Console.WriteLine("Name Your Crazy Ass Team of Criminals Or Whatever You Wanna Be Referred As:  ");
+    Console.WriteLine("Enter A Name For Your Crazy Team of Criminals Or Whatever You Wanna Be Referred As:  ");
     Console.WriteLine();
     myTeam.Name = Console.ReadLine();
     int trials = 0;
@@ -48,7 +48,23 @@ void Main()
             failure += 1;
         }
     }
-    Console.WriteLine($@"You just ran {trials} trials - with a total of {success} successful runs and {failure} failed runs. Try again I guess!! Didn't seem very fun though?");
+    Console.WriteLine($@"You just ran:
+
+
+    ***** {trials} TRIALS ***** 
+
+             featuring
+    
+    ***** {success} successful runs ******
+
+    **** {failure} failed runs ****** 
+    
+
+
+    Try again I guess if you enjoy this type of thing? Not really for me but seems like you're having fun?
+    
+    
+    ");
 
 
 void PickTeam()
@@ -56,7 +72,7 @@ void PickTeam()
     while (!ending) 
     {
     Console.WriteLine();
-    Console.WriteLine("Enter the wild ass criminal's - oh sorry - your 'TEAM MATE's name (if you're done entering team members, just press ENTER):  ");
+    Console.WriteLine("Enter a criminal's - oh sorry - your 'TEAM MATE's name (if you're done entering team members, just press ENTER):  ");
     Console.WriteLine();
     int i = myTeam.TeamMembers.Count;
     string memberName = Console.ReadLine();
@@ -134,7 +150,7 @@ void PickTeam()
         Trials result = new Trials(TeamSkill, newbankDifficulty, false);
         scoreBook.GameTrials.Add(result);
         Console.WriteLine();
-        Console.WriteLine("YOU GOT BUSTED MOTHER FUCKERRRRRRRSSSS TRY AGAINNN WITH BETTER PEOPLEEEEEEEEE");
+        Console.WriteLine("YOU GOT BUSTED YOU NERDS TRY AGAINNN WITH BETTER PEOPLEEEEEEEEE");
         Console.WriteLine();
     }
     else
