@@ -12,3 +12,4 @@ C:\Users\cfree\workspace\Heist\obj\Debug\net8.0\refint\Heist.dll
 C:\Users\cfree\workspace\Heist\obj\Debug\net8.0\Heist.pdb
 C:\Users\cfree\workspace\Heist\obj\Debug\net8.0\Heist.genruntimeconfig.cache
 C:\Users\cfree\workspace\Heist\obj\Debug\net8.0\ref\Heist.dll
+C:\Users\cfree\workspace\Heist\obj\Debug\net8.0\Heist.sourcelink.json
