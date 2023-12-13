@@ -158,7 +158,7 @@ void PickTeam()
         Trials result = new Trials(TeamSkill, newbankDifficulty, true);
         scoreBook.GameTrials.Add(result);
         Console.WriteLine();
-        Console.WriteLine("YOINKS THIS TEAM CAN REALLY DO IT DO IT THEY JUST ROBBED THE JOINT FOR A BAZZILLION GEORGIES OH MY GOD");
+        Console.WriteLine("ZOINKS THIS TEAM CAN REALLY DO IT DO IT THEY JUST ROBBED THE JOINT FOR A BAZZILLION GEORGIES OH MY GOD");
         Console.WriteLine();
     }
     }
