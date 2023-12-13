@@ -8,40 +8,57 @@ Main();
 void Main()
 {
     Team myTeam = new Team("The Fuckin Jokesters", new DateTime(1988, 08, 27));
-    TeamMember Colin = new TeamMember("Colin", 55, 0.2);
-    myTeam.TeamMembers.Add(Colin);
     Console.WriteLine("Plan Your Heist!");
     Console.WriteLine("================");
     Console.WriteLine();
-    Console.WriteLine("Enter your first team member's name - this is probably the main character I'd guess:  ");
+    PickTeam();
+
+void PickTeam()
+{   bool ending = false;
+    while (!ending) 
+    {
+    Console.WriteLine("Enter this crimin...I mean your team member's name:  ");
+    int i = myTeam.TeamMembers.Count;
     string memberName = Console.ReadLine();
-    TeamMember firstMember = new TeamMember(memberName, 0, 0.0);
-    myTeam.TeamMembers.Add(firstMember);
-    Console.WriteLine($"{firstMember.Name}, got it. A real stand up person, I'm sure. Welcome to {myTeam.Name}");
+    if (memberName == "")
+    {
+        ending = true;
+        break;
+    }
+    TeamMember newMember = new TeamMember(memberName, 0, 0.0);
+    myTeam.TeamMembers.Add(newMember);
+    Console.WriteLine($"{newMember.Name}, got it. A real stand up person, I'm sure. Welcome to {myTeam.Name}, {newMember.Name}");
     Console.WriteLine();
-    Console.WriteLine($"{myTeam.TeamMembers[0].Name} is also here. Say hi to him. He's not good at this but he's on the team. It's kind of this charity thing we do here.");
     Console.WriteLine();
-    Console.WriteLine($"OK, so this {firstMember.Name}.... what would you rate their overall skill? Any positive whole number will work.:  ");
+    Console.WriteLine($"OK, so this {newMember.Name}.... what would you rate their overall skill? Any positive whole number will work.:  ");
     int memberSkill = Int32.Parse(Console.ReadLine());
-    myTeam.TeamMembers[1].Skill = memberSkill;
+    myTeam.TeamMembers[i].Skill = memberSkill;
     Console.WriteLine();
-    Console.WriteLine($"OK so that's a {memberSkill} for {firstMember.Name}'s skill. Noted. Seems low. But noted.");
+    Console.WriteLine($"OK so that's a {memberSkill} for {newMember.Name}'s skill. Noted. Seems low. But noted.");
     Console.WriteLine();
-    Console.WriteLine($"Another quick one about this {firstMember.Name} friend of yours.... what would you rate their overall courage on a scale of 0.0 to 2.0? What? This is a normal question, people ask it all the time:  ");
+    Console.WriteLine($"Another quick one about this {newMember.Name} friend of yours.... what would you rate their overall courage on a scale of 0.0 to 2.0? What? This is a normal question, people ask it all the time:  ");
     double memberCourage = Convert.ToDouble(Console.ReadLine());
-    myTeam.TeamMembers[1].Courage = memberCourage;
+    myTeam.TeamMembers[i].Courage = memberCourage;
     Console.WriteLine();
-    Console.WriteLine($"Great, so that's a {memberCourage} for {firstMember.Name}'s courage. Man, that's kinda sad actually, poor kid. Anyway!");
+    Console.WriteLine($"Great, so that's a {memberCourage} for {newMember.Name}'s courage. Man, that's kinda sad actually, poor kid. Anyway!");
     Console.WriteLine();
-    Console.WriteLine(@$"So here's what we've got:
+    Console.WriteLine(@$"So here's what we've got...{myTeam.Name} has {myTeam.TeamMembers.Count} members, as follows:");
+    Console.WriteLine();
+    for (int k = 0; k < myTeam.TeamMembers.Count; k++ )
+    {
+        Console.WriteLine(@$"
 
-        ****NAME*****: {myTeam.TeamMembers[1].Name}
+        ****NAME*****: {myTeam.TeamMembers[k].Name}
 
-        ****SKILL LEVEL*****: {myTeam.TeamMembers[1].Skill}
+        ****SKILL LEVEL*****: {myTeam.TeamMembers[k].Skill}
 
-        ****COURAGE LEVEL*****: {myTeam.TeamMembers[1].Courage}
-        
+        ****COURAGE LEVEL*****: {myTeam.TeamMembers[k].Courage}
+
         ****OVERALL OUTLOOK*****: MEH KINDA HARD TO SAY TBH I WOULDN'T BET ON IT THO
-    ");
+        
+        ");
+    }
+}
 
+}
 }
