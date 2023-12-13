@@ -6,8 +6,8 @@ namespace Classes
     {
 
         // Some readonly properties (let's talk about gets, baby)
-        public string Name { get; }
-        public DateTime CreatedOn { get; }
+        public string Name { get; set; }
+        public DateTime CreatedOn { get; set; }
 
         // Create a public property for holding a list of current employees
         public List<TeamMember> TeamMembers { get; set; }
